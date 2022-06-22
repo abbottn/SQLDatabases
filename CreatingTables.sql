@@ -36,3 +36,16 @@ create table [OrderItem] (
 	Price decimal NOT NULL,
 	Quantity int NOT NULL
 );
+
+ALTER TABLE Product
+DROP COLUMN ExpirationDate;
+
+DROP TABLE IF EXISTS [Product];
+
+create table [Product] (
+	SKU varchar(10) NOT NULL PRIMARY KEY,
+	ProductName varchar(20) NOT NULL, 
+	ProdDescription varchar(50) NOT NULL,
+	Price decimal (6,2) NOT NULL,
+	ExpirationDate datetimeoffset NOT NULL
+);

@@ -15,10 +15,18 @@ VALUES
 
 INSERT INTO Product (SKU, ProductName, ProdDescription, Price)
 VALUES
-('A100', 'MacBook', 'Laptop', '1199.00'),
-('A101', 'Hair Dryer', '', '31.99'),
-('A102', 'Shampoo', 'Aloe Vera', '6.49')
+('A100', 'MacBook', 'Laptop', 1199.00),
+('A101', 'Hair Dryer', 'Professional', 79.95),
+('A102', 'Shampoo', 'Aloe Vera', 6.49)
 
+INSERT INTO [Order] (CustomerId, OrderDate, TotalPrice)
+VALUES
+(8, '2022-02-14', 7.15),
+(2, '2021-07-04', 1320.47)
 
-ALTER TABLE Product
-DROP COLUMN ExpirationDate;
+INSERT INTO OrderItem (OrderId, SKU, Price, Quantity)
+VALUES
+(1, 'A102', 6.49, 1),
+(2, 'A100', 1199.00, 1),
+(2, 'A101', 79.95, 1)
+
