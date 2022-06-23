@@ -14,5 +14,5 @@ SELECT FirstName, BirthDate
 
 SELECT FirstName, LastName
 	FROM Customer
-	WHERE DATEDIFF(year, BirthDate, GETDATE()) >= 25 
-	AND DATEDIFF(year, BirthDate, GETDATE()) <= 45
+	WHERE DATEDIFF(year, BirthDate, GETDATE()) > 25 
+	AND DATEDIFF(year, BirthDate, GETDATE()) < 45
