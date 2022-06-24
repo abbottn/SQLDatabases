@@ -11,3 +11,4 @@ SELECT *
 SELECT *
 	FROM [Order]
 	WHERE TotalPrice > 10
+	ORDER BY ItemCount

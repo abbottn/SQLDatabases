@@ -17,7 +17,8 @@ create table [Order] (
 	OrderId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	CustomerId int FOREIGN KEY REFERENCES [Customer] (CustomerId),
 	OrderDate datetimeoffset NOT NULL DEFAULT GETDATE(),
-	TotalPrice decimal NOT NULL,
+	TotalPrice decimal (6,2) NOT NULL,
+	ItemCount int NOT NULL,
 	OrderStatus varchar(20) DEFAULT ('placed')
 );
 
@@ -25,27 +26,14 @@ create table [Product] (
 	SKU varchar(10) NOT NULL PRIMARY KEY,
 	ProductName varchar(20) NOT NULL, 
 	ProdDescription varchar(50) NOT NULL,
-	Price decimal NOT NULL,
-	ExpirationDate datetimeoffset NOT NULL
+	Price decimal (6,2) NOT NULL
 );
 
 create table [OrderItem] (
-	OrderItemId int NOT NULL PRIMARY KEY,
+	OrderItemId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	OrderId int FOREIGN KEY REFERENCES [Order] (OrderId),
 	SKU varchar(10),
-	Price decimal NOT NULL,
+	Price decimal (6,2) NOT NULL,
 	Quantity int NOT NULL
 );
 
-ALTER TABLE Product
-DROP COLUMN ExpirationDate;
-
-DROP TABLE IF EXISTS [Product];
-
-create table [Product] (
-	SKU varchar(10) NOT NULL PRIMARY KEY,
-	ProductName varchar(20) NOT NULL, 
-	ProdDescription varchar(50) NOT NULL,
-	Price decimal (6,2) NOT NULL,
-	ExpirationDate datetimeoffset NOT NULL
-);
