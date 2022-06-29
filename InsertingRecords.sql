@@ -17,7 +17,10 @@ INSERT INTO Product (SKU, ProductName, ProdDescription, Price)
 VALUES
 ('A100', 'MacBook', 'Laptop', 1199.00),
 ('A101', 'Hair Dryer', 'Professional', 79.95),
-('A102', 'Shampoo', 'Aloe Vera', 6.49)
+('A102', 'Shampoo', 'Aloe Vera', 6.49),
+('A103', 'Keyboard', 'Lenovo', 28.95),
+('A104', 'Television', 'Samsung', 2799.99)
+
 
 INSERT INTO [Order] (CustomerId, OrderDate, TotalPrice, ItemCount)
 VALUES
@@ -26,10 +29,19 @@ VALUES
 (6, '2022-05-07', 7.15, 1),
 (9, '2022-01-29', 14.30, 2),
 (2, '2021-07-04', 83.61, 1),
-(4, '2021-11-21', 101.51, 11)
+(4, '2021-11-21', 101.51, 11),
+(1, '2022-04-11', 2917.63, 1),
+(5, '2022-06-25', 61.01, 2),
+(6, '2022-05-30', 6.49, 1),
+(9, '2021-12-25', 6.49, 1)
 
 INSERT INTO OrderItem (OrderId, SKU, Price, Quantity)
 VALUES
 (1, 'A102', 6.49, 1),
 (2, 'A100', 1199.00, 1),
-(2, 'A101', 79.95, 1)
+(2, 'A101', 79.95, 1),
+(7, 'A104', 2799.99, 1),
+(8, 'A103', 28.95, 2),
+(9, 'A102', 6.49, 1),
+(10, 'A102', 6.49, 1)
+
